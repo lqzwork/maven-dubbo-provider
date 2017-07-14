@@ -13,7 +13,7 @@
 	<description>Spring Configuration</description>
 	
 	<!-- 具体的实现bean -->
-    <bean id="myServiceImp" class="com.liqz.modules.dubbo.service.MyServiceImp" />
+    <bean id="myService2Imp" class="com.liqz.modules.dubbo.service.MyService2Imp" />
       
     <!-- 提供方应用信息，用于计算依赖关系 -->
     <dubbo:application name="my_provider2"/>
@@ -22,12 +22,12 @@
     <!-- <dubbo:registry address="multicast://224.5.6.7:1234"/>-->
     
     <!-- 使用zookeeper注册中心暴露服务地址 -->
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:registry address="zookeeper://127.0.0.1:2182"/>
     
     <!-- 用dubbo协议在20880端口暴露服务 -->
-    <dubbo:protocol name="dubbo" port="20880"/>
+    <dubbo:protocol name="dubbo" port="20881"/>
    
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.liqz.modules.dubbo.api.MyService" ref="myServiceImp"/>
+    <dubbo:service interface="com.liqz.modules.dubbo.api.MyService2" ref="myService2Imp"/>
 </beans>	
 	
